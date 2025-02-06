@@ -1,0 +1,45 @@
+🔹 Gerenciamento do Sistema
+Get-Help → Exibe ajuda sobre comandos
+Get-Command → Lista todos os comandos disponíveis
+Get-Process → Exibe processos em execução
+Stop-Process -Name "NomeProcesso" → Encerra um processo
+Restart-Computer → Reinicia o computador
+Get-Service → Lista os serviços do sistema
+Start-Service -Name "NomeServico" → Inicia um serviço
+Stop-Service -Name "NomeServico" → Para um serviço
+🔹 Gerenciamento de Arquivos e Diretórios
+Get-Location → Mostra o diretório atual
+Set-Location "C:\Pasta" (cd) → Muda para um diretório específico
+Get-ChildItem (ls ou dir) → Lista arquivos e pastas
+New-Item -ItemType File "arquivo.txt" → Cria um arquivo vazio
+New-Item -ItemType Directory "NovaPasta" → Cria uma pasta
+Remove-Item "arquivo.txt" (rm) → Exclui um arquivo ou pasta
+Copy-Item "origem.txt" -Destination "destino.txt" (cp) → Copia um arquivo
+Move-Item "arquivo.txt" -Destination "NovaPasta" (mv) → Move um arquivo
+Rename-Item "antigo.txt" -NewName "novo.txt" → Renomeia um arquivo
+🔹 Gerenciamento de Usuários e Permissões
+Get-LocalUser → Lista usuários locais
+New-LocalUser "NomeUsuario" -Password (ConvertTo-SecureString "Senha" -AsPlainText -Force) -FullName "Nome Completo" → Cria um usuário
+Remove-LocalUser -Name "NomeUsuario" → Exclui um usuário
+Get-LocalGroup → Lista grupos locais
+Add-LocalGroupMember -Group "Administrators" -Member "NomeUsuario" → Adiciona um usuário a um grupo
+🔹 Rede e Internet
+Test-Connection google.com (ping) → Testa conexão com um host
+Get-NetIPAddress → Exibe endereços IP do sistema
+Get-NetAdapter → Exibe informações sobre adaptadores de rede
+Get-NetTCPConnection → Lista conexões TCP ativas
+Resolve-DnsName google.com (nslookup) → Obtém informações de DNS
+🔹 Gerenciamento de Tarefas e Agendamentos
+Get-ScheduledTask → Lista tarefas agendadas
+New-ScheduledTaskAction -Execute "notepad.exe" → Cria uma ação para abrir o Bloco de Notas
+Register-ScheduledTask -TaskName "AbrirNotepad" -Action $acao -Trigger $gatilho -User "Administrador" -Password "senha" → Cria uma tarefa agendada
+🔹 Manipulação de Texto e Arquivos
+Get-Content "arquivo.txt" (cat) → Exibe o conteúdo de um arquivo
+Set-Content "arquivo.txt" "Novo conteúdo" → Escreve texto em um arquivo
+Add-Content "arquivo.txt" "Linha adicional" (echo) → Adiciona texto a um arquivo
+Select-String -Path "arquivo.txt" -Pattern "palavra" (grep) → Pesquisa um termo dentro de um arquivo
+🔹 Gerenciamento de Programas e Pacotes
+Get-AppxPackage → Lista aplicativos instalados
+Uninstall-Package -Name "NomeDoPrograma" → Remove um programa instalado
+Install-Package -Name "NomeDoPrograma" → Instala um programa
+winget install "Google Chrome" → Instala o Google Chrome (usando Winget)
