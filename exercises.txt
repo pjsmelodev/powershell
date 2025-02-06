@@ -1,0 +1,28 @@
+$PSVersionTable -> verifica a instalação do PowerShell
+
+$PSVersionTable.PSVersion -> devolve apenas a versão do PowerShell
+
+cmdlet -> comando compilado que usa o standard verbo-nome
+
+Get-Verb -> obtem a lista de verbos aprovados
+
+Get-Command -> gera a lista de todos os cmdlets no sistema
+
+Get-Help (help) -> ajuda
+
+Get-Member -> devolve um objeto
+
+Get-Command -Noun alias* -> devolve todos os comandos cujo nome comece (* -> wildcard) por 'alias'
+
+Get-Command -Verb Get -Noun alias* -> devolve todos os comandos cujo verbo é 'Get' e cujo nome começa por 'alias'
+
+Get-Command -Noun File* -> devolve tudo relacionado com ficheiros (com o nome 'File')
+|-> Agora é possível aprimorar a pesquisa acrescentando um verbo
+    |-> Get-Command -Verb Get -Noun File*
+
+KNOWLEDGE CHECK:
+1. What's a correct way to locate a command in PowerShell?
+    Call Get-Command 'name of command'
+
+2. How would you search for commands that deal with files?
+    Call Get-Command -Noun File*
