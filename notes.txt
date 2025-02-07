@@ -43,3 +43,41 @@ Get-AppxPackage → Lista aplicativos instalados
 Uninstall-Package -Name "NomeDoPrograma" → Remove um programa instalado
 Install-Package -Name "NomeDoPrograma" → Instala um programa
 winget install "Google Chrome" → Instala o Google Chrome (usando Winget)
+
+ERROR HANDLING:
+* Try -> bloco de código que é esperado correr
+
+* Catch -> é suposto correr quando alguma exceção é apanhada
+
+* Finally -> bloco de código que corre independentemente de alguma exceção ser apanhada
+
+INSPECIONAR ERROS:
+Um objeto de exceção contém:
+    * Mensagem: explica o erro que ocorreu
+    * Stacktrace: indica que statement correu antes do erro ter ocorrido
+    * Offending row: indica a linha onde o erro ocorreu
+
+$_ -> variável interna que tem uma propriedade de exceção
+
+Raising Errors:
+* Non-terminating errors: erros que não terminam a execução.
+    Usam o cmdlet Write-Error
+    É possível usar o cmdlet ErrorAction para indicar o que deve acontecer aquando do erro
+    exemplo:
+        Try {
+            Get-Content './file.txt' -ErrorAction Stop
+        } Catch {
+            Write-Error "File can't be found"
+        }
+
+* Business rules: quando o código não pára de responder mas é desejado que isso aconteça (razões de negócio)
+    É possível usar Throw para lançar um erro intencionalmente de forma a parar o código
+    exemplo:
+        Try {
+            If ($Path -eq './forbidden') 
+        {
+            Throw "Path not allowed"
+        }
+        } Catch {
+        Write-Error "$($_.exception.message)"
+        }
