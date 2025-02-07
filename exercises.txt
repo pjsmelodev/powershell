@@ -64,3 +64,28 @@ Parametros opcionais estão representados entre '[]'
 
 Switches são antecedidos por '-' e representam opções
 
+KNOWLEDGE CHECK:
+1. Which of these options is the common structure that PowerShell cmdlets use?
+    Verb-Noun
+
+2. Which key can you use to complete or suggest parameters for a PowerShell command?
+    Tab key
+
+KNOWLEDGE CHECK:
+1. How would you search for a cmdlet that retrieves a computer's properties from Active Directory?
+    Get-Help Get-AD*
+
+2. Which of the following are groups of related PowerShell capabilities that are bundled together into a single unit?
+    Modules
+
+SCRIPTING
+Variáveis -> guardam valores e são usadas como argumentos de comandos
+
+Funções -> conjunto de statements aos quais foi dado um nome
+
+Controlo de fluxo -> If, ElseIf e Else~
+
+Loops -> ciclos
+
+Error Handling -> Try e Catch
+
