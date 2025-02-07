@@ -26,3 +26,41 @@ KNOWLEDGE CHECK:
 
 2. How would you search for commands that deal with files?
     Call Get-Command -Noun File*
+
+Get-Help -Name Get-Help -> procura ajuda sobre Get-Help
+
+Update-Help -UICuture en-US -Verbose -> especifica a culture e devolve cmdlets numa forma extensa (-Verbose)
+
+Get-Hep Get-FileHash -Examles -> devolve uma help page mas apenas a secção de exemplos
+
+Get-Help -Name Get-FileHash -> devolve a help page do cmdlet chamado Get-FileHash
+    |-> alternativa: help Get-FileHash (alias)
+
+Get-Member -> cmdlet para ser usado em pipe de forma a filtrar por output
+    |-> exemplo: Get-Process -Name 'name-of-process' | Get-Member
+
+Get-Command -ParameterType Process
+
+KNOWLEDGE CHECK:
+1. Using the help system, what command or function helps you paginate the response?
+  help 'command'
+
+2. Which statement will most efficiently find the returned type from a command?
+    'command' | Get-Member
+
+cmdlet VERBS:
+Get -> retorna um recurso (ficheiro ou utilizador)
+Set -> altera dados associados a um recurso (ficheiro ou propriedade)
+New -> cria um recurso (ficheiro ou utilizador)
+Add -> adiciona um recurso a um container de recursos
+Remove -> apaga um recurso de um containers de recursos
+
+cmdlet Nouns:
+Indica o tipo do recurso ou objeto afetado pelo cmdlet
+
+Têm prefixos que ajudam a agrupar nouns relacionados entre si numa família
+
+Parametros opcionais estão representados entre '[]'
+
+Switches são antecedidos por '-' e representam opções
+
