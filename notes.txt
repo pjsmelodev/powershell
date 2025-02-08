@@ -179,3 +179,93 @@ KNOWLEDGE CHECK:
 
 2. You need to use PowerShell to review the Department and email address for an Active Directory user named User1. How will you format the PowerShell command?
     Get-ADUser -Identity User1 -Properties Department,EmailAdress
+
+cmdlets DO MÓDULO Microsoft.PowerShell.Management
+Cmdlet	            Description
+Get-ComputerInfo	Retrieves all system and operating system properties from the computer
+Get-Service	        Retrieves a list of all services on the computer
+Get-EventLog	    Retrieves events and event logs from local and remote computers (only available in Windows PowerShell 5.1)
+Get-Process	        Retrieves a list of all active processes on a local or remote computer
+Stop-Service	    Stops one or more running services
+Stop-Process	    Stops one or more running processes
+Stop-Computer	    Shuts down local and remote computers
+Clear-EventLog	    Deletes all of the entries from the specified event logs on the local computer or on remote computers
+Clear-RecycleBin	Deletes the content of a computer's recycle bin
+Restart-Computer	Restarts the operating system on local and remote computers
+Restart-Service	    Stops and then starts one or more services
+
+exemplos:
+    Get-ComputerInfo -> devolve informação sobre o computador
+    Get-EventLog -LogName Application -Newest 5 -EntryType Error -> devolve as 5 entradas mais recentes no Application Log, relacionadas com erros
+    Clear-EventLog -LogName Application -> limpa o Application Log
+    Get-Command -Module Microsoft.PowerShell.Security -> devolve os cmdlets relacionadas com segurança
+
+ACLs
+Cmdlet	Description
+Get-Acl	This cmdlet gets objects that represent the security descriptor of a file or resource. The security descriptor includes the access control lists (ACLs) of the resource. The ACL lists permissions that users and groups have to access the resource.
+Set-Acl	This cmdlet changes the security descriptor of a specified item, such as a file, folder, or a registry key, to match the values in a security descriptor that you supply.
+
+KNOWLEDGE CHECK:
+1. You need to use PowerShell to review system and operating system properties of the local computer. Which cmdlet should you use? 
+    Get-ComputerInfo
+
+2. You want to check the level of access a user has to C:\Folder1. Which cmdlet in the Microsoft.PowerShell.Security module would you use?
+    Get-Acl
+
+MANAGE IP ADDRESS IN PowerShell
+Cmdlet	            Description
+New-NetIPAddress	Creates a new IP address
+Get-NetIPAddress	Displays properties of an IP address
+Set-NetIPAddress	Modifies properties of an IP address
+Remove-NetIPAddress	Deletes an IP address
+
+CREATING NEW IP ADDRESS SETTINGS
+Parameter	    Description
+-IPAddress	    Defines the IPv4 or IPv6 address to create
+-InterfaceIndex	Defines the network interface, by index, for the IP address
+-InterfaceAlias	Defines the network interface, by name, for the IP address
+-DefaultGateway	Defines the IPv4 or IPv6 address of the default gateway host
+-PrefixLength	Defines the subnet mask for the IP address
+
+MANAGE IP ROUTING IN PowerShell
+Cmdlet	        Description
+New-NetRoute	Creates an entry in the IP routing table
+Get-NetRoute	Retrieves an entry from the IP routing table
+Set-NetRoute	Modifies properties of an entry in the IP routing table
+Remove-NetRoute	Deletes an entry from the IP routing table
+Find-NetRoute	Identifies the best local IP address and route to reach a remote address
+
+CREATING IP ROUTING TABLE ENTRY
+Parameter	        Description
+‑DestinationPrefix	Defines the destination prefix of an IP route
+‑InterfaceAlias	    Defines the network interface, by alias, for an IP route
+‑InterfaceIndex	    Defines the network interface, by index, for an IP route
+‑NextHop	        Defines the next hop for an IP route
+‑RouteMetric	    Defines the route metric for an IP route
+
+MANAGE DNS CLIENTS IN PowerShell
+Cmdlet	                    Description
+Get-DnsClient	            Gets details about a network interface
+Set-DnsClient	            Sets DNS client configuration settings for a network interface
+Get-DnsClientServerAddress	Gets the DNS server address settings for a network interface
+Set-DnsClientServerAddress	Sets the DNS server address for a network interface
+
+MANAGE WINDOWS FIREWALL SETTINGS IN PowerShell
+Cmdlet	                Description
+New-NetFirewallRule	    Creates a new firewall rule
+Set-NetFirewallRule	    Sets properties for a firewall rule
+Get-NetFirewallRule	    Gets properties for a firewall rule
+Remove-NetFirewallRule	Deletes a firewall rule
+Rename-NetFirewallRule	Renames a firewall rule
+Copy-NetFirewallRule	Makes a copy of a firewall rule
+Enable-NetFirewallRule	Enables a firewall rule
+Disable-NetFirewallRule	Disables a firewall rule
+Get-NetFirewallProfile	Gets properties for a firewall profile
+Set-NetFirewallProfile	Sets properties for a firewall profile
+
+KNOWLEDGE CHECK:
+1. Which parameter can you use with *-NetIPAddress cmdlets to identify a network interface?
+    -InterfaceAlias
+
+2. You need to manage firewall settings and rules with PowerShell. Which PowerShell module contains the required cmdlets?
+    NetSecurity module
