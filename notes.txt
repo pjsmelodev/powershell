@@ -269,3 +269,23 @@ KNOWLEDGE CHECK:
 
 2. You need to manage firewall settings and rules with PowerShell. Which PowerShell module contains the required cmdlets?
     NetSecurity module
+
+KNOWLEDGE CHECK:
+1. Which construct should you use to process an array when you're not sure how many items will be in the array?
+    ForEach
+
+2. Which loop construct in PowerShell supports processing multiple objects simultaneously?
+    ForEach
+
+USE VARIABLE SCOPE IN WINDOWS PowerShell SCRIPTS
+Scope	    Description
+Global	    The global scope is for the Windows PowerShell prompt. Variables set at the Windows PowerShell prompt can be reviewed in all the scripts started at that Windows PowerShell prompt. Variables created at a Windows PowerShell prompt don't exist in other Windows PowerShell prompts or in instances of the Windows PowerShell Integrated Scripting Environment (ISE).
+Script	    The script scope is for a single script. Variables set within a script can be reviewed by all the functions within that script. If you set a variable value in the script scope that already exists in the global scope, a new variable is created in the script scope. There are then two variables of the same name in two separate scopes. At this point, when you review the value of the variable in the script, the value of the variable in the script scope is returned.
+Function	The function scope is for a single function. Variables set within a function aren't shared with other functions or the script. If you set a variable value in the function scope that already exists in the global or script scope, a new variable is created in the function scope. Then, there are two variables of the same name in two separate scopes.
+
+KNOWLEDGE CHECK:
+1. Which path should you use to store a module named OrgFunctions.psm1 for Windows PowerShell?
+    C:\Windows\System32\WindowsPowerShell\1.0\Modules\OrgFunctions
+
+2. Which command will modify a script scope variable from a function?
+    $script:var = "Modified from function"
