@@ -46,4 +46,11 @@ KNOWLEDGE CHECK:
 
 3. How can you cause a terminating error?
     Use the keyword Throw followed by a string or object
+
+KNOWLEDGE CHECK:
+1. You want to start PowerShell 7 from the command line. Which command will you run? 
+    pwsh.exe
+
+2. Why might you decide to use the ISE versus the console host?
+    Supports richer editing capabilities and can display a wider range of fonts
 #>
